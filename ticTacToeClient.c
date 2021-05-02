@@ -57,34 +57,6 @@ int main()
 	// and then close the socket
 
 	// draw board
-	/*printf("\033[0;0H\033[2J  1 2 3\n ╔═╦═╦═╗\n1║ ║ ║ ║\n ╠═╬═╬═╣\n2║ ║ ║ ║\n ╠═╬═╬═╣\n3║ ║ ║ ║\n ╚═╩═╩═╝\n");
-
-	char map[10] = "         ";
-	unsigned int x;
-	unsigned int y;
-	char turn;
-	for (int i = 0; i < 20; ++i)
-	{
-		printf("\033[9;0HWho turn (X/0):        \033[9;17H");
-		scanf(" %c", &turn);
-		printf("\033[9;0HX-axis (1-3):          \033[9;15H");
-		scanf("%u", &x);
-		printf("\033[9;0HY-axis (1-3):          \033[9;15H");
-		scanf("%u", &y);
-		y -= 1;
-		x -= 1;
-		if (map[y * 3 + x] == 32)
-		{
-			map[y * 3 + x] = turn;
-		}
-		else
-		{
-			printf("\033[10;0H\033[31mThis is full          \033[0m\033[9;15H");
-		}
-		updateMap(map);
-	}
-
-	printf("\033[9;0H");*/
 	shutdown(network_socket, 2);
 	return 0;
 }
