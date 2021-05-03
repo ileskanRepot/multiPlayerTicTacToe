@@ -37,7 +37,7 @@ int main()
 
 	int player2;
 	player2 = accept(server_socket, NULL, NULL);
-	send(player2 & player1, playerCount, 39, 0);
+	send(player2 & player1, playerCount, 4, 0);
 
 	// send the message
 

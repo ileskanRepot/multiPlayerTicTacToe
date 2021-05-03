@@ -19,7 +19,7 @@ int updateMap(char map[10])
 	return 0;
 }
 
-int main()
+int main(int argc, char **argv)
 {
 
 	// create a socket
@@ -30,7 +30,13 @@ int main()
 	struct sockaddr_in server_address;
 	server_address.sin_family = AF_INET;
 	server_address.sin_port = htons(9002);
-	server_address.sin_addr.s_addr = inet_addr("10.1.16.237"); //INADDR_ANY;
+	if (!argv[1])
+	{
+		argv[1] = (char *)malloc(12);
+		argv[1] = "10.1.17.117";
+	}
+	printf("Addr: %s\n", argv[1]);
+	server_address.sin_addr.s_addr = inet_addr(argv[1]); //INADDR_ANY;
 
 	int connection_status = connect(network_socket, (struct sockaddr *)&server_address, sizeof(server_address));
 
@@ -38,6 +44,7 @@ int main()
 	if (connection_status == -1)
 	{
 		printf("There was an error making a connection to the remote socket \n\n");
+		return 0;
 	}
 
 	// recive data from the server
