@@ -47,7 +47,7 @@ int main()
 
 	if (!server_response[0])
 	{
-		printf("Waiting player two\n");
+		printf("Waiting player two (:\n");
 	}
 
 	char server_response2[256];
